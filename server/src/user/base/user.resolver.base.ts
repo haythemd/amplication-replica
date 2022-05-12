@@ -29,6 +29,7 @@ import { CertificationFindManyArgs } from "../../certification/base/Certificatio
 import { Certification } from "../../certification/base/Certification";
 import { NotePaperFindManyArgs } from "../../notePaper/base/NotePaperFindManyArgs";
 import { NotePaper } from "../../notePaper/base/NotePaper";
+import { ClassRoom } from "../../classRoom/base/ClassRoom";
 import { UserService } from "../user.service";
 
 @graphql.Resolver(() => User)
@@ -94,7 +95,15 @@ export class UserResolverBase {
   async createUser(@graphql.Args() args: CreateUserArgs): Promise<User> {
     return await this.service.create({
       ...args,
-      data: args.data,
+      data: {
+        ...args.data,
+
+        classRoom: args.data.classRoom
+          ? {
+              connect: args.data.classRoom,
+            }
+          : undefined,
+      },
     });
   }
 
@@ -109,7 +118,15 @@ export class UserResolverBase {
     try {
       return await this.service.update({
         ...args,
-        data: args.data,
+        data: {
+          ...args.data,
+
+          classRoom: args.data.classRoom
+            ? {
+                connect: args.data.classRoom,
+              }
+            : undefined,
+        },
       });
     } catch (error) {
       if (isRecordNotFoundError(error)) {
@@ -178,5 +195,21 @@ export class UserResolverBase {
     }
 
     return results;
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => ClassRoom, { nullable: true })
+  @nestAccessControl.UseRoles({
+    resource: "ClassRoom",
+    action: "read",
+    possession: "any",
+  })
+  async classRoom(@graphql.Parent() parent: User): Promise<ClassRoom | null> {
+    const result = await this.service.getClassRoom(parent.id);
+
+    if (!result) {
+      return null;
+    }
+    return result;
   }
 }

@@ -14,6 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { CertificationUpdateManyWithoutUsersInput } from "./CertificationUpdateManyWithoutUsersInput";
 import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
+import { ClassRoomWhereUniqueInput } from "../../classRoom/base/ClassRoomWhereUniqueInput";
 import { NotePaperUpdateManyWithoutUsersInput } from "./NotePaperUpdateManyWithoutUsersInput";
 @InputType()
 class UserUpdateInput {
@@ -28,6 +29,18 @@ class UserUpdateInput {
     nullable: true,
   })
   certifications?: CertificationUpdateManyWithoutUsersInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => ClassRoomWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => ClassRoomWhereUniqueInput)
+  @IsOptional()
+  @Field(() => ClassRoomWhereUniqueInput, {
+    nullable: true,
+  })
+  classRoom?: ClassRoomWhereUniqueInput | null;
 
   @ApiProperty({
     required: false,

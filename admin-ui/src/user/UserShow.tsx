@@ -4,19 +4,27 @@ import {
   Show,
   SimpleShowLayout,
   ShowProps,
-  DateField,
+  ReferenceField,
   TextField,
+  DateField,
   ReferenceManyField,
   Datagrid,
-  ReferenceField,
 } from "react-admin";
 
 import { USER_TITLE_FIELD } from "./UserTitle";
+import { CLASSROOM_TITLE_FIELD } from "../classRoom/ClassRoomTitle";
 
 export const UserShow = (props: ShowProps): React.ReactElement => {
   return (
     <Show {...props}>
       <SimpleShowLayout>
+        <ReferenceField
+          label="ClassRoom"
+          source="classroom.id"
+          reference="ClassRoom"
+        >
+          <TextField source={CLASSROOM_TITLE_FIELD} />
+        </ReferenceField>
         <DateField source="createdAt" label="Created At" />
         <TextField label="First Name" source="firstName" />
         <TextField label="ID" source="id" />

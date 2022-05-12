@@ -14,6 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { CertificationCreateNestedManyWithoutUsersInput } from "./CertificationCreateNestedManyWithoutUsersInput";
 import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
+import { ClassRoomWhereUniqueInput } from "../../classRoom/base/ClassRoomWhereUniqueInput";
 import { NotePaperCreateNestedManyWithoutUsersInput } from "./NotePaperCreateNestedManyWithoutUsersInput";
 @InputType()
 class UserCreateInput {
@@ -28,6 +29,18 @@ class UserCreateInput {
     nullable: true,
   })
   certifications?: CertificationCreateNestedManyWithoutUsersInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => ClassRoomWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => ClassRoomWhereUniqueInput)
+  @IsOptional()
+  @Field(() => ClassRoomWhereUniqueInput, {
+    nullable: true,
+  })
+  classRoom?: ClassRoomWhereUniqueInput | null;
 
   @ApiProperty({
     required: false,

@@ -10,7 +10,13 @@ https://docs.amplication.com/docs/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "nestjs-prisma";
-import { Prisma, User, Certification, NotePaper } from "@prisma/client";
+import {
+  Prisma,
+  User,
+  Certification,
+  NotePaper,
+  ClassRoom,
+} from "@prisma/client";
 import { PasswordService } from "../../auth/password.service";
 import { transformStringFieldUpdateInput } from "../../prisma.util";
 
@@ -92,5 +98,13 @@ export class UserServiceBase {
         where: { id: parentId },
       })
       .notePapers(args);
+  }
+
+  async getClassRoom(parentId: string): Promise<ClassRoom | null> {
+    return this.prisma.user
+      .findUnique({
+        where: { id: parentId },
+      })
+      .classRoom();
   }
 }

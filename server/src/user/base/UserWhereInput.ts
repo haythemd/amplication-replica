@@ -14,6 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { CertificationListRelationFilter } from "../../certification/base/CertificationListRelationFilter";
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
+import { ClassRoomWhereUniqueInput } from "../../classRoom/base/ClassRoomWhereUniqueInput";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { NotePaperListRelationFilter } from "../../notePaper/base/NotePaperListRelationFilter";
@@ -30,6 +31,18 @@ class UserWhereInput {
     nullable: true,
   })
   certifications?: CertificationListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => ClassRoomWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => ClassRoomWhereUniqueInput)
+  @IsOptional()
+  @Field(() => ClassRoomWhereUniqueInput, {
+    nullable: true,
+  })
+  classRoom?: ClassRoomWhereUniqueInput;
 
   @ApiProperty({
     required: false,

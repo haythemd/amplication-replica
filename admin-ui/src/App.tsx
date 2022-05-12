@@ -21,6 +21,14 @@ import { CertificationList } from "./certification/CertificationList";
 import { CertificationCreate } from "./certification/CertificationCreate";
 import { CertificationEdit } from "./certification/CertificationEdit";
 import { CertificationShow } from "./certification/CertificationShow";
+import { ClassRoomList } from "./classRoom/ClassRoomList";
+import { ClassRoomCreate } from "./classRoom/ClassRoomCreate";
+import { ClassRoomEdit } from "./classRoom/ClassRoomEdit";
+import { ClassRoomShow } from "./classRoom/ClassRoomShow";
+import { SyllabusList } from "./syllabus/SyllabusList";
+import { SyllabusCreate } from "./syllabus/SyllabusCreate";
+import { SyllabusEdit } from "./syllabus/SyllabusEdit";
+import { SyllabusShow } from "./syllabus/SyllabusShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -74,6 +82,20 @@ const App = (): React.ReactElement => {
           edit={CertificationEdit}
           create={CertificationCreate}
           show={CertificationShow}
+        />
+        <Resource
+          name="ClassRoom"
+          list={ClassRoomList}
+          edit={ClassRoomEdit}
+          create={ClassRoomCreate}
+          show={ClassRoomShow}
+        />
+        <Resource
+          name="Syllabus"
+          list={SyllabusList}
+          edit={SyllabusEdit}
+          create={SyllabusCreate}
+          show={SyllabusShow}
         />
       </Admin>
     </div>

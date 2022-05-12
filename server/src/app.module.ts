@@ -5,6 +5,8 @@ import { UserModule } from "./user/user.module";
 import { CourseModule } from "./course/course.module";
 import { NotePaperModule } from "./notePaper/notePaper.module";
 import { CertificationModule } from "./certification/certification.module";
+import { ClassRoomModule } from "./classRoom/classRoom.module";
+import { SyllabusModule } from "./syllabus/syllabus.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { HealthModule } from "./health/health.module";
@@ -21,6 +23,8 @@ import { GraphQLModule } from "@nestjs/graphql";
     CourseModule,
     NotePaperModule,
     CertificationModule,
+    ClassRoomModule,
+    SyllabusModule,
     ACLModule,
     AuthModule,
     HealthModule,
