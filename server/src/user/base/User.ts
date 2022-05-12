@@ -14,6 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { Certification } from "../../certification/base/Certification";
 import { ValidateNested, IsOptional, IsDate, IsString } from "class-validator";
 import { Type } from "class-transformer";
+import { ClassRoom } from "../../classRoom/base/ClassRoom";
 import { NotePaper } from "../../notePaper/base/NotePaper";
 @ObjectType()
 class User {
@@ -25,6 +26,15 @@ class User {
   @Type(() => Certification)
   @IsOptional()
   certifications?: Array<Certification>;
+
+  @ApiProperty({
+    required: false,
+    type: () => ClassRoom,
+  })
+  @ValidateNested()
+  @Type(() => ClassRoom)
+  @IsOptional()
+  classRoom?: ClassRoom | null;
 
   @ApiProperty({
     required: true,

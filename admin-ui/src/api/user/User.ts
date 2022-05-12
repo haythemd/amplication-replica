@@ -1,8 +1,10 @@
 import { Certification } from "../certification/Certification";
+import { ClassRoom } from "../classRoom/ClassRoom";
 import { NotePaper } from "../notePaper/NotePaper";
 
 export type User = {
   certifications?: Array<Certification>;
+  classRoom?: ClassRoom | null;
   createdAt: Date;
   firstName: string | null;
   id: string;

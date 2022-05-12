@@ -322,5 +322,185 @@
     "resource": "Certification",
     "action": "read:any",
     "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ClassRoom",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ClassRoom",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "ClassRoom",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ClassRoom",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ClassRoom",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "ClassRoom",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ClassRoom",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ClassRoom",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "ClassRoom",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ClassRoom",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ClassRoom",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "ClassRoom",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ClassRoom",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ClassRoom",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "ClassRoom",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Syllabus",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Syllabus",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "Syllabus",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Syllabus",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Syllabus",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "Syllabus",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Syllabus",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Syllabus",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "Syllabus",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Syllabus",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Syllabus",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "Syllabus",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Syllabus",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Syllabus",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "teacher",
+    "resource": "Syllabus",
+    "action": "read:any",
+    "attributes": "*"
   }
 ]

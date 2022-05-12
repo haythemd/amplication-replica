@@ -6,11 +6,14 @@ import {
   EditProps,
   ReferenceArrayInput,
   SelectArrayInput,
+  ReferenceInput,
+  SelectInput,
   TextInput,
   PasswordInput,
 } from "react-admin";
 
 import { CertificationTitle } from "../certification/CertificationTitle";
+import { ClassRoomTitle } from "../classRoom/ClassRoomTitle";
 import { NotePaperTitle } from "../notePaper/NotePaperTitle";
 import { ROLES_OPTIONS } from "../user/RolesOptions";
 
@@ -26,6 +29,13 @@ export const UserEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={CertificationTitle} />
         </ReferenceArrayInput>
+        <ReferenceInput
+          source="classroom.id"
+          reference="ClassRoom"
+          label="ClassRoom"
+        >
+          <SelectInput optionText={ClassRoomTitle} />
+        </ReferenceInput>
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />
         <ReferenceArrayInput

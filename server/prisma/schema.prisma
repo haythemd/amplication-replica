@@ -9,6 +9,8 @@ generator client {
 
 model User {
   certifications Certification[]
+  classRoom      ClassRoom?      @relation(fields: [classRoomId], references: [id])
+  classRoomId    String?
   createdAt      DateTime        @default(now())
   firstName      String?
   id             String          @id @default(cuid())
@@ -44,4 +46,22 @@ model Certification {
   updatedAt DateTime @updatedAt
   user      User     @relation(fields: [userId], references: [id])
   userId    String
+}
+
+model ClassRoom {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  name      String?
+  syllabus  String?
+  updatedAt DateTime @updatedAt
+  users     User[]
+}
+
+model Syllabus {
+  createdAt DateTime @default(now())
+  desc      String?
+  id        String   @id @default(cuid())
+  teacher   String?
+  title     String?
+  updatedAt DateTime @updatedAt
 }
