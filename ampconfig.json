@@ -1,0 +1,19 @@
+{
+  "dataServiceGeneratorVersion": "0.12.7",
+  "appInfo": {
+    "name": "Tek-Up",
+    "description": "A Cross-Platform ERP for use in Tek-up University",
+    "version": "sucv3jfw",
+    "id": "cl31mebzk5985801s6au5n149u",
+    "url": "https://app.amplication.com/cl31mebzk5985801s6au5n149u",
+    "settings": {
+      "dbHost": "localhost",
+      "dbName": "",
+      "dbPassword": "admin",
+      "dbPort": 5432,
+      "dbUser": "admin",
+      "appId": "cl31mebzk5985801s6au5n149u",
+      "authProvider": "Jwt"
+    }
+  }
+}
