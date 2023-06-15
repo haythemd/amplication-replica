@@ -27,6 +27,7 @@ model Post {
   createdAt DateTime  @default(now())
   dislikes  Int?
   id        String    @id @default(auto()) @map("_id") @mongo.ObjectId
+  imageUrl  String?
   likes     Int?
   topic     String?
   updatedAt DateTime  @updatedAt

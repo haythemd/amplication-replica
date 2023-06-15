@@ -8,6 +8,7 @@ export type PostWhereInput = {
   content?: StringNullableFilter;
   dislikes?: IntNullableFilter;
   id?: StringFilter;
+  imageUrl?: StringNullableFilter;
   likes?: IntNullableFilter;
   topic?: StringNullableFilter;
   userId?: StringNullableFilter;

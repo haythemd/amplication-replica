@@ -5,6 +5,7 @@ export type PostOrderByInput = {
   createdAt?: SortOrder;
   dislikes?: SortOrder;
   id?: SortOrder;
+  imageUrl?: SortOrder;
   likes?: SortOrder;
   topic?: SortOrder;
   updatedAt?: SortOrder;

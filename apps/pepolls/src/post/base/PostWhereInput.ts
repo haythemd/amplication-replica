@@ -67,6 +67,17 @@ class PostWhereInput {
 
   @ApiProperty({
     required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  imageUrl?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
     type: IntNullableFilter,
   })
   @Type(() => IntNullableFilter)
