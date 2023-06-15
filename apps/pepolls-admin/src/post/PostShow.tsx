@@ -21,6 +21,7 @@ export const PostShow = (props: ShowProps): React.ReactElement => {
         <DateField source="createdAt" label="Created At" />
         <TextField label="dislikes" source="dislikes" />
         <TextField label="ID" source="id" />
+        <TextField label="imageUrl" source="imageUrl" />
         <TextField label="likes" source="likes" />
         <TextField label="topic" source="topic" />
         <DateField source="updatedAt" label="Updated At" />

@@ -26,6 +26,7 @@ export const PostEdit = (props: EditProps): React.ReactElement => {
         </ReferenceArrayInput>
         <TextInput label="content" source="content" />
         <NumberInput step={1} label="dislikes" source="dislikes" />
+        <TextInput label="imageUrl" source="imageUrl" />
         <NumberInput step={1} label="likes" source="likes" />
         <TextInput label="topic" source="topic" />
         <TextInput label="userID" source="userId" />

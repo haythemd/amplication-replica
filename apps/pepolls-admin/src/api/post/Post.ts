@@ -6,6 +6,7 @@ export type Post = {
   createdAt: Date;
   dislikes: number | null;
   id: string;
+  imageUrl: string | null;
   likes: number | null;
   topic: string | null;
   updatedAt: Date;
