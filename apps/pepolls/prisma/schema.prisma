@@ -1,0 +1,44 @@
+datasource mongo {
+  provider = "mongodb"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  birthdate DateTime?
+  createdAt DateTime  @default(now())
+  email     String?
+  firstName String?
+  id        String    @id @default(auto()) @map("_id") @mongo.ObjectId
+  image     String?
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime  @updatedAt
+  username  String    @unique
+}
+
+model Post {
+  comments  Comment[]
+  content   String?
+  createdAt DateTime  @default(now())
+  dislikes  Int?
+  id        String    @id @default(auto()) @map("_id") @mongo.ObjectId
+  likes     Int?
+  topic     String?
+  updatedAt DateTime  @updatedAt
+  userId    String?
+}
+
+model Comment {
+  content   String?
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @mongo.ObjectId
+  post      Post?    @relation(fields: [postId], references: [id])
+  postId    String?
+  updatedAt DateTime @updatedAt
+  userId    String?
+}
